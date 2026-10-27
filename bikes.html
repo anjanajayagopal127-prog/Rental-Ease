@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentalEase | Bike Rental</title>
+  <link rel="stylesheet" href="css/bikes.css">
+  <script src="js/bikes.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html">RentalEase</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cars.html">Cars</a>
+      <a class="active" href="bikes.html">Bikes</a>
+      <a href="bookings.html">My Bookings</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">YOUR RIDE, YOUR WAY</p>
+      <h1>Find your perfect bike.</h1>
+      <p>Explore bikes, choose your dates and calculate your rental cost.</p>
+    </section>
+
+    <section class="search-panel">
+      <label>
+        Search bike
+        <input id="searchInput" type="search"
+          placeholder="Search by model or type">
+      </label>
+
+      <label>
+        Bike type
+        <select id="typeFilter">
+          <option value="all">All types</option>
+          <option value="Scooter">Scooter</option>
+          <option value="Commuter">Commuter</option>
+          <option value="Sports">Sports</option>
+          <option value="Cruiser">Cruiser</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="catalog">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE OUR COLLECTION</p>
+          <h2>Available bikes</h2>
+        </div>
+        <span id="resultCount">0 bikes</span>
+      </div>
+      <div id="bikeList" class="bike-grid"></div>
+      <p id="emptyMessage" class="empty-message" hidden>
+        No bikes match your search.
+      </p>
+    </section>
+
+    <section class="booking-panel" id="bookingPanel">
+      <p class="eyebrow">RESERVE YOUR RIDE</p>
+      <h2>Bike booking details</h2>
+      <p id="selectedBike">Select a bike above to begin.</p>
+
+      <form id="bookingForm">
+        <input type="hidden" id="bikeId">
+
+        <label>
+          Your name
+          <input id="customerName" type="text"
+            placeholder="Enter your name" required>
+        </label>
+
+        <label>
+          Pickup date
+          <input id="pickupDate" type="date" required>
+        </label>
+
+        <label>
+          Return date
+          <input id="returnDate" type="date" required>
+        </label>
+
+        <div class="cost-box">
+          <span>Estimated rental total</span>
+          <strong id="totalCost">₹0</strong>
+          <small id="costNote">Select a bike and rental dates.</small>
+        </div>
+
+        <button type="submit" class="primary-button">
+          Confirm Booking
+        </button>
+        <p id="formMessage" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>RentalEase · Car & Bike Rental Project</p>
+    <p>Academic demonstration — sample prices and availability.</p>
+  </footer>
+</body>
+</html>

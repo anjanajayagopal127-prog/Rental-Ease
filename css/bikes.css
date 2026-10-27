@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #172b2b;
+  --muted: #647575;
+  --accent: #087f70;
+  --paper: #f4f8f6;
+  --white: #ffffff;
+  --line: #dce7e2;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 7%;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  color: var(--accent);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+}
+
+.hero {
+  padding: 65px 7%;
+  background: #dcefe8;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  max-width: 700px;
+  margin: 10px 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+}
+
+.hero > p:last-child {
+  color: var(--muted);
+}
+
+.search-panel,
+.catalog,
+.booking-panel {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 25px;
+}
+
+.search-panel {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+input,
+select {
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px;
+  border: 1px solid #cbd9d3;
+  border-radius: 8px;
+  background: white;
+  font: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #80cbb9;
+  outline-offset: 2px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.section-heading h2,
+.booking-panel h2 {
+  margin-top: 0;
+}
+
+#resultCount {
+  color: var(--muted);
+}
+
+.bike-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.bike-card {
+  padding: 22px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 5px 18px #17372b0a;
+}
+
+.bike-illustration {
+  display: grid;
+  place-items: center;
+  min-height: 130px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  background: #e6f2ec;
+  font-size: 4rem;
+}
+
+.bike-card h3 {
+  margin: 8px 0;
+}
+
+.bike-type {
+  display: inline-block;
+  padding: 4px 10px;
+  color: var(--accent);
+  background: #e4f5ef;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.bike-price {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.bike-price small {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.primary-button {
+  width: 100%;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  background: var(--accent);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background: #056457;
+}
+
+.bike-card button {
+  margin-top: 10px;
+}
+
+.empty-message {
+  padding: 25px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.booking-panel {
+  padding: 30px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+#bookingForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.cost-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px;
+  background: #e8f5ef;
+  border-radius: 10px;
+}
+
+.cost-box strong {
+  color: var(--accent);
+  font-size: 1.6rem;
+}
+
+.cost-box small {
+  color: var(--muted);
+}
+
+#bookingForm .primary-button,
+#formMessage {
+  grid-column: 1 / -1;
+}
+
+#formMessage {
+  margin: 0;
+  font-weight: 600;
+}
+
+footer {
+  padding: 25px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 750px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .search-panel,
+  #bookingForm {
+    grid-template-columns: 1fr;
+  }
+
+  .bike-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-panel,
+  .catalog,
+  .booking-panel {
+    margin: 18px 12px;
+    padding: 18px;
+  }
+}
